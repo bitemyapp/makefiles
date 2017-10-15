@@ -15,7 +15,7 @@ run: build
 	./target/debug/$(package)
 
 install:
-	$(cargo) install
+	$(cargo) install --force
 
 test:
 	$(cargo) test
@@ -31,7 +31,7 @@ watch:
 
 # You need nightly for rustfmt at the moment
 dev-deps:
-	cargo install fmt
-	cargo install rustfmt-nightly
+	$(cargo) install fmt
+	$(cargo) install rustfmt-nightly
 
 .PHONY : build build-release run install test test-debug fmt watch dev-deps
