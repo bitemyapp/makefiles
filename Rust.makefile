@@ -14,6 +14,9 @@ build-release:
 run: build
 	./target/debug/$(package)
 
+install:
+	$(cargo) install
+
 test:
 	$(cargo) test
 
@@ -31,4 +34,4 @@ dev-deps:
 	cargo install fmt
 	cargo install rustfmt-nightly
 
-.PHONY : build build-release run test test-debug fmt watch dev-deps
+.PHONY : build build-release run install test test-debug fmt watch dev-deps

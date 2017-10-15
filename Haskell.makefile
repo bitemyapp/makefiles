@@ -12,6 +12,9 @@ build-dirty:
 run:
 	$(stack) build --fast && $(stack) exec -- $(package)
 
+install:
+	$(stack) install
+
 ghci:
 	$(stack) ghci $(package):lib
 
@@ -27,4 +30,4 @@ ghcid:
 dev-deps:
 	stack install ghcid
 
-.PHONY : build build-dirty run ghci test test-ghci ghcid dev-deps
+.PHONY : build build-dirty run install ghci test test-ghci ghcid dev-deps
