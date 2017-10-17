@@ -24,6 +24,9 @@ test:
 test-ghci:
 	$(stack) ghci $(package):test:$(package)-tests
 
+bench:
+	$(stack) bench $(package)
+
 ghcid:
 	$(stack) exec -- ghcid -c "stack ghci $(package):lib --test --ghci-options='-fobject-code -fno-warn-unused-do-bind' --main-is $(package):$(package)"
 
