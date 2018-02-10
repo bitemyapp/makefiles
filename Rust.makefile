@@ -27,7 +27,7 @@ fmt:
 	$(cargo) fmt
 
 watch:
-	$(cargo) watch -- cargo build
+	$(cargo) watch
 
 # You need nightly for rustfmt at the moment
 dev-deps:
