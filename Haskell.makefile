@@ -9,6 +9,9 @@ build:
 build-dirty:
 	$(stack) build --ghc-options=-fforce-recomp $(package)
 
+build-profile:
+	$(stack) --work-dir .stack-work-profiling --profile build
+
 run:
 	$(stack) build --fast && $(stack) exec -- $(package)
 
