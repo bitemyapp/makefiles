@@ -19,13 +19,13 @@ install:
 	$(stack) install
 
 ghci:
-	$(stack) ghci $(package):lib
+	$(stack) ghci $(package):lib --ghci-options='-j6 +RTS -A128m'
 
 test:
 	$(stack) test $(package)
 
 test-ghci:
-	$(stack) ghci $(package):test:$(package)-tests
+	$(stack) ghci $(package):test:$(package)-tests --ghci-options='-j6 +RTS -A128m'
 
 bench:
 	$(stack) bench $(package)
